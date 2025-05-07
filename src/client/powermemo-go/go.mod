@@ -1,4 +1,4 @@
-module github.com/memodb-io/powermemo/src/client/powermemo-go
+module github.com/skorpland/powermemo/src/client/powermemo-go
 
 go 1.22.3
 

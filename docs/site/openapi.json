@@ -47,7 +47,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\nok := client.Ping()\nif !ok {\n    panic(\"Failed to connect to Powermemo\")\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\nok := client.Ping()\nif !ok {\n    panic(\"Failed to connect to Powermemo\")\n}\n",
 						"label": "Go"
 					}
 				],
@@ -221,7 +221,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n    \"github.com/google/uuid\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Generate a UUID for the user\nuserID := uuid.New().String()\n\n// Create user with some data\ndata := map[string]interface{}{\"ANY\": \"DATA\"}\nresultID, err := client.AddUser(data, userID)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n    \"github.com/google/uuid\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Generate a UUID for the user\nuserID := uuid.New().String()\n\n// Create user with some data\ndata := map[string]interface{}{\"ANY\": \"DATA\"}\nresultID, err := client.AddUser(data, userID)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -282,7 +282,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user by ID\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user by ID\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -354,7 +354,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Update user data\nnewData := map[string]interface{}{\"ANY\": \"NEW_DATA\"}\nerr = client.UpdateUser(userID, newData)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Update user data\nnewData := map[string]interface{}{\"ANY\": \"NEW_DATA\"}\nerr = client.UpdateUser(userID, newData)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -413,7 +413,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Delete user\nerr = client.DeleteUser(userID)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Delete user\nerr = client.DeleteUser(userID)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -508,7 +508,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Get all blobs\nblobs, err := user.GetAll(blob.ChatType)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Get all blobs\nblobs, err := user.GetAll(blob.ChatType)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -580,7 +580,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Create chat blob\nchatBlob := &blob.ChatBlob{\n    BaseBlob: blob.BaseBlob{\n        Type: blob.ChatType,\n    },\n    Messages: []blob.OpenAICompatibleMessage{\n        {\n            Role:    \"user\",\n            Content: \"Hi, I'm here again\",\n        },\n        {\n            Role:    \"assistant\",\n            Content: \"Hi, Gus! How can I help you?\",\n        },\n    },\n}\n\n// Insert blob\nblobID, err := user.Insert(chatBlob)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Create chat blob\nchatBlob := &blob.ChatBlob{\n    BaseBlob: blob.BaseBlob{\n        Type: blob.ChatType,\n    },\n    Messages: []blob.OpenAICompatibleMessage{\n        {\n            Role:    \"user\",\n            Content: \"Hi, I'm here again\",\n        },\n        {\n            Role:    \"assistant\",\n            Content: \"Hi, Gus! How can I help you?\",\n        },\n    },\n}\n\n// Insert blob\nblobID, err := user.Insert(chatBlob)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -652,7 +652,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Get blob\nblob, err := user.Get(blobID)\nif err != nil {\n    panic(err)\n}\n\n// If it's a chat blob, you can access its messages\nif chatBlob, ok := blob.(*blob.ChatBlob); ok {\n    messages := chatBlob.Messages\n    // Process messages\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Get blob\nblob, err := user.Get(blobID)\nif err != nil {\n    panic(err)\n}\n\n// If it's a chat blob, you can access its messages\nif chatBlob, ok := blob.(*blob.ChatBlob); ok {\n    messages := chatBlob.Messages\n    // Process messages\n}\n",
 						"label": "Go"
 					}
 				]
@@ -722,7 +722,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Delete blob\nerr = user.Delete(blobID)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Delete blob\nerr = user.Delete(blobID)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -867,7 +867,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Get profile\nprofiles, err := user.Profile()\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Get profile\nprofiles, err := user.Profile()\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -1128,7 +1128,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Delete profile\nerr = user.DeleteProfile(profileID)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Delete profile\nerr = user.DeleteProfile(profileID)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]
@@ -1200,7 +1200,7 @@
 					},
 					{
 						"lang": "Go",
-						"source": "// To use the Go SDK, install the package:\n// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/core\"\n    \"github.com/memodb-io/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Flush buffer\nerr = user.Flush(blob.ChatType)\nif err != nil {\n    panic(err)\n}\n",
+						"source": "// To use the Go SDK, install the package:\n// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest\n\nimport (\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/core\"\n    \"github.com/skorpland/powermemo/src/client/powermemo-go/blob\"\n)\n\nprojectURL := \"YOUR_PROJECT_URL\"\napiKey := \"YOUR_API_KEY\"\nclient, err := core.NewPowerMemoClient(projectURL, apiKey)\nif err != nil {\n    panic(err)\n}\n\n// Get user\nuser, err := client.GetUser(userID)\nif err != nil {\n    panic(err)\n}\n\n// Flush buffer\nerr = user.Flush(blob.ChatType)\nif err != nil {\n    panic(err)\n}\n",
 						"label": "Go"
 					}
 				]

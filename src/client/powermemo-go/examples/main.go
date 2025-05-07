@@ -5,8 +5,8 @@ import (
 	"log"
 
 	"github.com/google/uuid"
-	"github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
-	"github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+	"github.com/skorpland/powermemo/src/client/powermemo-go/blob"
+	"github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 func main() {

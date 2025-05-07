@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	
-	mberror "github.com/memodb-io/powermemo/src/client/powermemo-go/error"
+	mberror "github.com/skorpland/powermemo/src/client/powermemo-go/error"
 )
 
 type BaseResponse struct {

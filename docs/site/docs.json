@@ -156,7 +156,7 @@
         },
         {
           "anchor": "Open Source",
-          "href": "https://github.com/memodb-io/powermemo",
+          "href": "https://github.com/skorpland/powermemo",
           "icon": "github"
         },
         {
@@ -187,7 +187,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "https://github.com/memodb-io/powermemo?tab=readme-ov-file#support"
+        "href": "https://github.com/skorpland/powermemo?tab=readme-ov-file#support"
       }
     ],
     "primary": {
@@ -199,7 +199,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/powermemo_io",
-      "github": "https://github.com/memodb-io",
+      "github": "https://github.com/skorpland",
       "discord": "https://discord.gg/YdgwU4d9NB"
     }
   },

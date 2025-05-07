@@ -5,7 +5,7 @@ A Go client library for interacting with the PowerMemo API. This library allows 
 ## Installation
 
 ```bash
-go get github.com/memodb-io/powermemo/src/client/powermemo-go
+go get github.com/skorpland/powermemo/src/client/powermemo-go
 ```
 
 ## Requirements
@@ -19,7 +19,7 @@ go get github.com/memodb-io/powermemo/src/client/powermemo-go
 
 ```go
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 // Initialize with direct API key
@@ -59,7 +59,7 @@ PowerMemo currently supports `ChatBlob` for storing conversation messages.
 
 ```go
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/blob"
 )
 
 // Create a chat blob

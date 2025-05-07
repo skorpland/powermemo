@@ -32,10 +32,10 @@ await client.ping();
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -166,10 +166,10 @@ const userId = await client.addUser({ANY: "DATA"});
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
     "github.com/google/uuid"
 )
 
@@ -226,10 +226,10 @@ const user = await client.getUser(userId);
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -281,10 +281,10 @@ await client.updateUser(userId, {ANY: "NEW_DATA"});
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -337,10 +337,10 @@ await client.deleteUser(userId);
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -395,11 +395,11 @@ const blobs = await user.getAll(BlobType.Enum.chat);
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/blob"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -482,11 +482,11 @@ const blobId = await user.insert(Blob.parse({
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/blob"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -563,11 +563,11 @@ const blob = await user.get(blobId);
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/blob"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -633,10 +633,10 @@ await user.delete(blobId);
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -696,10 +696,10 @@ const profiles = await user.profile();
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -758,11 +758,11 @@ await user.flush(BlobType.Enum.chat);
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/blob"
 )
 
 projectURL := "YOUR_PROJECT_URL"
@@ -820,10 +820,10 @@ await client.deleteProfile('user_id', 'profile_id');
         {
             "lang": "Go",
             "source": """// To use the Go SDK, install the package:
-// go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+// go get github.com/skorpland/powermemo/src/client/powermemo-go@latest
 
 import (
-    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+    "github.com/skorpland/powermemo/src/client/powermemo-go/core"
 )
 
 projectURL := "YOUR_PROJECT_URL"

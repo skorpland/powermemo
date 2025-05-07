@@ -8,7 +8,7 @@ Powermemo offers [an easy way](/practices/openai) already for OpenAI client to r
 This document is a detailed code breakdown of how to implement this feature.
 
 ## Setup
-1. Go to [Powermemo](https://www.powermemo.io/en) for your Powermemo API Key or launch [a local server](https://github.com/memodb-io/powermemo/tree/dev/src/server)
+1. Go to [Powermemo](https://www.powermemo.io/en) for your Powermemo API Key or launch [a local server](https://github.com/skorpland/powermemo/tree/dev/src/server)
 2. Setup the environment variables:
 ```bash
 OPENAI_API_KEY=your_openai_api_key
@@ -29,7 +29,7 @@ To implement the memory feature around OpenAI client, we need to:
 2. Integrate Powermemo APIs in wrappers to memorize the chat history and retrieve user memory
 3. Test if the memory feature works as expected
 
-> [Full Code](https://github.com/memodb-io/powermemo/blob/main/src/client/powermemo/patch/openai.py)
+> [Full Code](https://github.com/skorpland/powermemo/blob/main/src/client/powermemo/patch/openai.py)
 ### Basic Setup
 ```python
 import os

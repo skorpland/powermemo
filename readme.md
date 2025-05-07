@@ -333,4 +333,4 @@ Or Just [email us](mailto:contact@powermemo.io) ❤️
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/memodb-io/powermemo/blob/main/LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/skorpland/powermemo/blob/main/LICENSE) file for details.

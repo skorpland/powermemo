@@ -8,7 +8,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
+	"github.com/skorpland/powermemo/src/client/powermemo-go/blob"
 )
 
 func TestUser_Insert(t *testing.T) {

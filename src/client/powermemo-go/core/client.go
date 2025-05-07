@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/memodb-io/powermemo/src/client/powermemo-go/network"
+	"github.com/skorpland/powermemo/src/client/powermemo-go/network"
 )
 
 type PowerMemoClient struct {

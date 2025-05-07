@@ -7,7 +7,7 @@
   </a>
   <p><strong>The server-side of Powermemo</strong></p>
   <p>
-    <img src="https://img.shields.io/github/v/tag/memodb-io/powermemo">
+    <img src="https://img.shields.io/github/v/tag/skorpland/powermemo">
   </p>
 </div>
 
@@ -72,14 +72,14 @@ Check out the [docs](https://docs.powermemo.io/quickstart) of how to use Powerme
 2. Find and download the docker image of Powermemo:
 
    ```bash
-   docker pull ghcr.io/memodb-io/powermemo:latest
+   docker pull ghcr.io/skorpland/powermemo:latest
    ```
 
 3. Setup your `config.yaml` and an `env.list` file, the `env.list` should look like [this](./api/.env.example):
 
 4. Run the service:
    ```bash
-   docker run --env-file env.list -v ./api/config.yaml:/app/config.yaml -p 8019:8000 ghcr.io/memodb-io/powermemo:main
+   docker run --env-file env.list -v ./api/config.yaml:/app/config.yaml -p 8019:8000 ghcr.io/skorpland/powermemo:main
    ```
 
 

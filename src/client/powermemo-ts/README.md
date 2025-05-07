@@ -16,8 +16,8 @@
     <a href="https://npmcharts.com/compare/@powermemo/powermemo?minimal=true">
       <img src="https://img.shields.io/npm/dm/@powermemo/powermemo.svg?logo=typescript&&logoColor=fff&style=flat&colorA=2C2C2C&colorB=28CF8D" />
     </a>
-    <a href="https://github.com/memodb-io/powermemo/actions/workflows/publish.yaml">
-      <img src="https://github.com/memodb-io/powermemo/actions/workflows/publish.yaml/badge.svg">
+    <a href="https://github.com/skorpland/powermemo/actions/workflows/publish.yaml">
+      <img src="https://github.com/skorpland/powermemo/actions/workflows/publish.yaml/badge.svg">
     </a>
   </p>
 </div>
@@ -129,11 +129,11 @@ This project exists thanks to all the people who contribute.
 
 And thank you to all our backers! 🙏
 
-<a href="https://github.com/memodb-io/powermemo/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=memodb-io/powermemo" />
+<a href="https://github.com/skorpland/powermemo/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=skorpland/powermemo" />
 </a>
 
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/memodb-io/powermemo/blob/main/LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](https://github.com/skorpland/powermemo/blob/main/LICENSE) file for details.

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/memodb-io/powermemo/src/client/powermemo-go/blob"
-	"github.com/memodb-io/powermemo/src/client/powermemo-go/network"
+	"github.com/skorpland/powermemo/src/client/powermemo-go/blob"
+	"github.com/skorpland/powermemo/src/client/powermemo-go/network"
 )
 
 type User struct {

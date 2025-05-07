@@ -40,12 +40,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/memodb-io/powermemo.git"
+    "url": "git+https://github.com/skorpland/powermemo.git"
   },
   "bugs": {
-    "url": "https://github.com/memodb-io/powermemo/issues"
+    "url": "https://github.com/skorpland/powermemo/issues"
   },
-  "homepage": "https://github.com/memodb-io/powermemo#readme",
+  "homepage": "https://github.com/skorpland/powermemo#readme",
   "dependencies": {
     "zod": "^3.24.2"
   }
