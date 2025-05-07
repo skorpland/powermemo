@@ -1,45 +1,6 @@
 <div align="center">
   <h1>Powermemo</h1>
-  <p>
-    <a href="https://pypi.org/project/powermemo/">
-      <img src="https://img.shields.io/pypi/v/powermemo.svg">
-    </a>
-    <a href="https://www.npmjs.com/package/@powermemo/powermemo">
-      <img src="https://img.shields.io/npm/v/@powermemo/powermemo.svg?logo=npm&logoColor=fff&style=flat&labelColor=2C2C2C&color=28CF8D">
-    </a>
-    <a href="https://jsr.io/@powermemo/powermemo">
-      <img src="https://img.shields.io/jsr/v/@powermemo/powermemo.svg?logo=jsr&logoColor=fff&style=flat&labelColor=2C2C2C&color=28CF8D" />
-    </a>
-    <a href="https://pkg.go.dev/github.com/memodb-io/powermemo/src/client/powermemo-go">
-      <img src="https://img.shields.io/badge/go-reference-blue?logo=go&logoColor=fff&style=flat&labelColor=2C2C2C&color=28CF8D" />
-    </a>
-    <a href="https://github.com/orgs/memodb-io/packages?repo_name=powermemo">
-    <img src="https://img.shields.io/github/v/tag/memodb-io/powermemo">
-    </a>
-  <a href="https://github.com/memodb-io/powermemo/actions/workflows/publish.yaml">
-      <img src="https://github.com/memodb-io/powermemo/actions/workflows/publish.yaml/badge.svg">
-    </a>
-  </p>
-  <p>
-    <a href="https://app.powermemo.io/playground">
-       <img src="https://img.shields.io/badge/Powermemo-Playground-blue">
-    </a>
-    <a href="https://discord.gg/YdgwU4d9NB">
-      <img src="https://dcbadge.limes.pink/api/server/YdgwU4d9NB?style=flat">
-    </a>
-    <a href="https://github.com/memodb-io/powermemo/issues/61">
-       <img src="https://img.shields.io/badge/群聊-wechat-green">
-    </a>
-  </p>
 </div>
-
-
-
-
-
-
-
-
 
 Powermemo is a **user profile-based memory system** designed to bring long-term user memory to your Generative AI (GenAI) applications. Whether you're building virtual companions, educational tools, or personalized assistants, Powermemo empowers your AI to **remember**,  **understand**, and **evolve** with your users.
 
