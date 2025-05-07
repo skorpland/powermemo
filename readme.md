@@ -1,5 +1,4 @@
 <div align="center">
-    <a href="https://powermemo.io">
     <picture>
       <img alt="Shows the Powermemo logo" src="./assets/images/logo.png" width="80%">
     </picture>
