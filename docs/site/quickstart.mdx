@@ -1,0 +1,455 @@
+---
+title: 'Quickstart'
+---
+
+
+<CardGroup cols={2}>
+  <Card title="Patch OpenAI" icon="webhook" href="practices/openai">
+    Use OpenAI API with Memory, powered by Powermemo
+  </Card>
+  <Card title="Client Side" icon="code-branch" href="#powermemo-client">
+    Use SDK or APIs to connect to Powermemo Backend
+  </Card>
+  <Card title="Server Side" icon="chart-simple" href="#powermemo-backend">
+    Launch Powermemo Backend
+  </Card>
+</CardGroup>
+
+
+## Powermemo Client
+
+### Get Prepared
+
+<AccordionGroup>
+<Accordion title="Using SDK">
+<CodeGroup>
+```bash pip
+pip install powermemo
+```
+```bash npm
+npm install @powermemo/powermemo
+```
+```bash deno
+deno add jsr:@powermemo/powermemo
+```
+
+```bash go
+go get github.com/memodb-io/powermemo/src/client/powermemo-go@latest
+```
+
+```bash http
+# Skip to next step
+```
+</CodeGroup>
+</Accordion>
+<Accordion title="Your Project URL and TOKEN">
+See [next section](#powermemo-backend)
+</Accordion>
+</AccordionGroup>
+
+### Connect to Powermemo Backend
+
+<AccordionGroup>
+<Accordion title="Instantiate client">
+<CodeGroup>
+```python Python
+from powermemo import PowerMemoClient
+
+client = PowerMemoClient(
+    project_url=PROJECT_URL,
+    api_key=PROJECT_TOKEN,
+)
+```
+```typescript Node
+import { PowerMemoClient, Blob, BlobType } from '@powermemo/powermemo';
+
+const client = new PowerMemoClient(process.env['POWERMEMO_PROJECT_URL'], process.env['POWERMEMO_API_KEY'])
+```
+
+```go Go
+import (
+    "github.com/memodb-io/powermemo/src/client/powermemo-go/core"
+)
+projectURL := "YOUR_PROJECT_URL"
+apiKey := "YOUR_API_KEY"
+client, err := core.NewPowerMemoClient(projectURL, apiKey)
+```
+</CodeGroup>
+</Accordion>
+<Accordion title="Test connection">
+<CodeGroup>
+
+```python Python
+assert client.ping()
+```
+```typescript Node
+const ping = await client.ping()
+```
+```go Go
+ok := client.Ping()
+```
+
+```bash cURL
+curl -H "Authorization: Bearer $PROJECT_TOKEN" "$PROJECT_URL/api/v1/healthcheck"
+```
+
+```json Output
+{"data":null,"errno":0,"errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+</AccordionGroup>
+
+### User Management
+This section is a quickstart of how to do CURD of users.
+<AccordionGroup>
+<Accordion title="Create">
+<CodeGroup>
+
+```python Python
+uid = client.add_user({"ANY": "DATA"})
+```
+```typescript Node
+const userId = await client.addUser({ANY: "DATA"})
+```
+```go Go
+userid := uuid.New()
+userId, err := client.AddUser(map[string]interface{}{"ANY": "DATA"}, userid.String())
+```
+```bash cURL
+curl -X POST "$PROJECT_URL/api/v1/users" \
+     -H "Authorization: Bearer $PROJECT_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"data": {"ANY": "DATA"}}'
+```
+
+```json Output
+{"data":{"id":"60377b0b-bf46-462f-UUID-2fbc6a38a884"},"errno":0,"errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+
+<Accordion title="Update">
+<CodeGroup>
+
+```python Python
+client.update_user(uid, {"ANY": "NEW_DATA"})
+```
+```typescript Node
+await client.updateUser(userId, {ANY: "NEW_DATA"})
+```
+```go Go
+client.UpdateUser(userId, map[string]interface{}{"ANY": "NEW_DATA"})
+```
+```bash cURL
+curl -X PUT "$PROJECT_URL/api/v1/users/{uid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"data": {"ANY": "NEW_DATA"}}'
+```
+
+```json Output
+{
+    "data":{
+        "id": "60377b0b-bf46-462f-UUID-2fbc6a38a884",
+    },
+    "errno":0,
+    "errmsg":""
+}
+```
+</CodeGroup>
+</Accordion>
+
+<Accordion title="Get">
+<CodeGroup>
+
+```python Python
+u = client.get_user(uid)
+```
+
+```typescript Node
+const user = await client.getUser(userId)
+```
+
+```go Go
+user, err := client.GetUser(userId)
+```
+
+```bash cURL
+curl -X GET "$PROJECT_URL/api/v1/users/{uid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN"
+```
+
+```json Output
+{
+    "data":{
+        "data":{"ANY":"DATA"},
+        "created_at":"2024-11-21T15:29:50.503356",
+        "updated_at":"2024-11-21T15:29:50.503356"
+    },
+    "errno":0,
+    "errmsg":""
+}
+```
+</CodeGroup>
+</Accordion>
+
+<Accordion title="Delete">
+<CodeGroup>
+
+```python Python
+client.delete_user(uid)
+```
+
+```typescript Node
+await client.deleteUser(userId)
+```
+
+```go Go
+client.DeleteUser(userId)
+```
+
+```bash cURL
+curl -X DELETE "$PROJECT_URL/api/v1/users/{uid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN"
+```
+
+```json Output
+{"data":null,"errno":0,"errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+</AccordionGroup>
+
+### User Data Management
+Once you created a user, you can start to manage user data.
+<AccordionGroup>
+<Accordion title="Insert Data">
+<CodeGroup>
+
+```python Python
+from powermemo import ChatBlob
+b = ChatBlob(messages=[
+    {
+        "role": "user",
+        "content": "Hi, I'm here again"
+    },
+    {
+        "role": "assistant",
+        "content": "Hi, Gus! How can I help you?"
+    }
+])
+u = client.get_user(uid)
+bid = u.insert(b)
+```
+
+```typescript Node
+const blobId = await user.insert(Blob.parse({
+    type: BlobType.Enum.chat,
+    messages: [{
+        role: 'user',
+        content: 'Hello, how are you?'
+    }]
+}))
+```
+
+```go Go
+chatBlob := &blob.ChatBlob{
+	BaseBlob: blob.BaseBlob{
+		Type: blob.ChatType,
+	},
+	Messages: []blob.OpenAICompatibleMessage{
+		{
+			Role:    "user",
+			Content: "Hello, I am Jinjia!",
+		},
+		{
+			Role:    "assistant",
+			Content: "Hi there! How can I help you today?",
+		},
+	},
+}
+
+blobID, err := user.Insert(chatBlob)
+```
+
+```bash cURL
+curl -X POST "$PROJECT_URL/api/v1/blobs/insert/{uid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{ "blob_type": "chat", "blob_data": { "messages": [ {"role": "user","content": "Hi, Im here again"}, {"role": "assistant", "content": "Hi, Gus! How can I help you?", "alias": "Character"}] }}'
+```
+
+```json Output
+{"data":{"id":"60377b0b-bf46-BLOB-UUID-2fbc6a38a884"},"errno":0,"errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+
+<Accordion title="Get">
+<CodeGroup>
+
+```python Python
+b = u.get(bid)
+```
+
+```typescript Node
+const blob = await user.get(blobId)
+```
+
+```go Go
+blob, err := user.Get(blobId)
+```
+
+```bash cURL
+curl -X GET "$PROJECT_URL/api/v1/blobs/{uid}/{bid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN"
+```
+
+```json Output
+{
+    "data":{
+        "blob_type":"chat",
+        "blob_data":{
+            "messages":[
+                {"role":"user","alias":null,"content":"Hi, Im here again"},
+                {"role":"assistant","alias":null,"content":"Hi, Gus! How can I help you?"}
+                ]
+            },
+        "fields":null,
+        "created_at":"2024-11-23T08:38:22.067493",
+        "updated_at":"2024-11-23T08:38:22.067493"
+    },
+    "errno":0,
+    "errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+
+<Accordion title="Delete">
+<CodeGroup>
+
+```python Python
+u.delete(bid)
+```
+
+```typescript Node
+await user.delete(blobId)
+```
+
+```go Go
+err := user.Delete(blobId)
+```
+
+```bash cURL
+curl -X DELETE "$PROJECT_URL/api/v1/blobs/{uid}/{bid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN"
+```
+
+```json Output
+{"data":null,"errno":0,"errmsg":""}
+```
+</CodeGroup>
+</Accordion> 
+</AccordionGroup>
+
+### Memory Operations
+Powermemo provides memory extraction and storage for each user：
+1. `flush`: User Data will stay in buffer until the buffer is too big or IDLE for too long. You can flush the buffer to trigger the memory extraction manually
+
+<Accordion title="Flush" description="e.g. After a chat session is closed">
+<CodeGroup>
+
+```python Python
+u.flush()
+```
+
+```typescript Node
+await user.flush(BlobType.Enum.chat)
+```
+
+```go Go
+err := user.Flush(blob.ChatType)
+```
+
+```bash cURL
+curl -X POST "$PROJECT_URL/api/v1/users/buffer/{uid}/chat" \
+     -H "Authorization: Bearer $PROJECT_TOKEN"
+```
+
+```json Output
+{"data":null,"errno":0,"errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+
+2. `profile`: Get the memory profiles of a user.
+
+<Accordion title="User Profile">
+<CodeGroup>
+
+```python Python
+u.profile()
+```
+
+```typescript Node
+const profiles = await user.profile()
+```
+
+```go Go
+profiles, err := user.Profile()
+```
+
+```bash cURL
+curl -X GET "$PROJECT_URL/api/v1/users/profile/{uid}" \
+     -H "Authorization: Bearer $PROJECT_TOKEN"
+```
+
+```json Output
+{
+    "data":{
+        "profiles":[
+            {
+                "content":"Gus",
+                "attributes":{"topic":"basic_info","sub_topic":"name"},
+
+                "id":"186bdbf0-ce35-4608-9404-47af27000f7f",
+                "created_at":"2024-11-23T08:53:14.227481",
+                "updated_at":"2024-11-23T08:53:14.227481",
+            }
+        ]
+    },
+    "errno":0,
+    "errmsg":""}
+```
+</CodeGroup>
+</Accordion>
+
+3. Pack the profiles into your system prompt:
+
+
+<Accordion title="Prompt Example" description="Example Profile from ShareGPT">
+<CodeGroup>
+
+```txt Prompt
+Below are the user profile:
+* basic_info: name - 오*영
+* basic_info: language_spoken - User uses both English and Korean.
+* education:  - User had an English teacher who emphasized capitalization rules during school days.
+* education: major - 국어국문학과 (Korean Language and Literature)
+* demographics: marital_status - user is married
+...
+You should be aware of these information when you talk to the user.
+```
+</CodeGroup>
+</Accordion>
+
+
+## Powermemo Backend
+Powermemo offers a [open-source solution](https://github.com/memodb-io/powermemo) with a docker backend to launch your own instance.
+You can use `docker-compose` to launch the backend [in one command](https://github.com/memodb-io/powermemo/blob/main/src/server/readme.md#get-started).
+
+> We also provide a cloud service, but it is still under development. Below steps are for future reference.
+> 1. Sign up at [Powermemo](https://powermemo.io)
+> 2. Create a [new project](https://powermemo.io/dashboard), and get your project url, token.
+

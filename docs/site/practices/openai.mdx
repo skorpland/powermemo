@@ -1,0 +1,156 @@
+---
+title: OpenAI API with Memory
+---
+<Frame caption="Diagram of OpenAI API with Memory">
+  <img src="/images/openai_client.png" />
+</Frame>
+
+Powermemo supports OpenAI API integration. 
+This allows you to "patch" Powermemo's memory capabilities to OpenAI chat completion
+(or any LLM provider that is compatible to OpenAI SDK) without changing the original code.
+
+
+## Setup
+1. Make sure you install Powermemo python SDK and OpenAI python SDK
+```bash
+pip install powermemo openai
+```
+
+2. Initialize OpenAI and PowerMemoClient
+```python
+from openai import OpenAI
+from powermemo import PowerMemoClient
+
+client = OpenAI()
+mb_client = PowerMemoClient(
+    project_url=ENDPOINT,
+    api_key=TOKEN,
+)
+```
+Make sure you have the Powermemo Endpoint and Token ready, check [here](/quickstart#get-prepared)
+
+## Patch Memory 
+```python
+from powermemo.patch.openai import openai_memory
+
+client = openai_memory(client, mb_client)
+```
+You're all set!
+
+
+## How to use OpenAI with Memory?
+1. You can use OpenAI API as you normally would but simply add `user_id` to the request.
+
+<CodeGroup>
+```python OpenAI
+client.chat.completions.create(
+    messages=[
+        {"role": "user", "content": "I'm Gus"},
+    ],
+    model="gpt-4o"
+)
+```
+```python OpenAI with Memory
+client.chat.completions.create(
+    messages=[
+        {"role": "user", "content": "I'm Gus"},
+    ],
+    model="gpt-4o",
+    user_id="test",
+)
+```
+</CodeGroup>
+
+2. If no `user_id` is passed, the client will act just like the original OpenAI client.
+3. If `user_id` is passed, the client will use Powermemo automatically.
+4. The memory processing of the user won't be trigger immediately, there is a buffer zone to collect the recent messages.
+However, you can manually trigger the process by
+```python
+client.flush("test")
+```
+
+## Make sure the memory is retained
+<CodeGroup>
+```python OpenAI
+client.chat.completions.create(
+    messages=[
+        {"role": "user", "content": "Who'm I?"},
+    ],
+    model="gpt-4o"
+)
+
+# I'm sorry, I can't determine your identity...
+```
+```python OpenAI with Memory
+client.chat.completions.create(
+    messages=[
+        {"role": "user", "content": "Who'm I?"},
+    ],
+    model="gpt-4o",
+    user_id="test",
+)
+
+# You're Gus! If you need anything specific...
+```
+</CodeGroup>
+
+## How it works?
+
+1. The `openai_memory` function patches the OpenAI client to call Powermemo SDK before and after the chat completion.
+2. **Only the latest** user query and assistant response will be inserted into the memory.
+    - If your messages are:
+    ```json
+    [
+        {"role": "user", "content": "I'm Gus"},
+        {"role": "assistant", "content": "Hello Gus! How can I help you?"},
+        {"role": "user", "content": "Who'm I?"},
+    ]
+    ```
+    And the response is `You'r Gus!`. 
+    - Then the only the latest query and response will be inserted, equivalent to:
+    ```python
+    u.insert(
+        ChatBlob(messages=[
+            {"role": "user", "content": "Who'm I?"},
+            {"role": "assistant", "content": "You're Gus!"},
+        ]
+    ))
+    ```
+3. So you don't really change the way you're currently using OpenAI API, you can still keep the recent messages when you call the chat completion API.
+And Powermemo won't repeatedly insert the same messages into the memory.
+
+
+The full script is [here](https://github.com/memodb-io/powermemo/blob/main/assets/openai_memory.py)
+
+## Advanced Usage
+### Params 
+When you use the `openai_memory` function, you can pass additional arguments to customize the memory behavior:
+```python
+client = openai_memory(client, mb_client, max_context_size=500)
+```
+`max_context_size` will control the maximum token size of Memory Context will take, default to 1000.
+```python
+client = openai_memory(client, mb_client, additional_memory_prompt="Make sure the user's query needs the memory, otherwise just return the answer directly.")
+```
+`additional_memory_prompt` will control how LLM will use the memory, some examples:
+```python
+additional_memory_prompt="Always use user memory to give a personalized answer"
+additional_memory_prompt="Use memory to dig deeper into the user's query and rewrite the query..."
+```
+
+### Patched Methods
+Once you patch the OpenAI client, you can use the following methods in it:
+```python
+client.get_memory_prompt("userid")
+```
+This method will return the current memory section(including memory, `memory_prompt`) of the user.
+```python
+client.flush("userid")
+```
+This method will flush the memory of the user immediately, Powermemo **won't** update the memory right away, if you like to see the updated memory once your message is processed, call this method.
+
+
+
+
+
+

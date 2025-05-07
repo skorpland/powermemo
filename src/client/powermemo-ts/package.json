@@ -1,0 +1,52 @@
+{
+  "name": "@powermemo/powermemo",
+  "version": "0.0.10",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "test": "jest",
+    "prepare": "chmod -R +x ./scripts/ && npm run build",
+    "lint": "./scripts/lint",
+    "fix": "./scripts/format"
+  },
+  "keywords": [
+    "retrieval",
+    "memory",
+    "rag",
+    "chatgpt",
+    "llm-application",
+    "user-memory"
+  ],
+  "author": "Powermemo <contact@powermemo.io>",
+  "license": "Apache-2.0",
+  "description": "Client SDK for Powermemo",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.8",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.2",
+    "ts-jest": "^29.2.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memodb-io/powermemo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/memodb-io/powermemo/issues"
+  },
+  "homepage": "https://github.com/memodb-io/powermemo#readme",
+  "dependencies": {
+    "zod": "^3.24.2"
+  }
+}

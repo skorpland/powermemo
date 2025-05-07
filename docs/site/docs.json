@@ -1,0 +1,214 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Powermemo",
+  "colors": {
+    "primary": "#6c60f0",
+    "light": "#ececdb",
+    "dark": "#a3df02"
+  },
+  "favicon": "/logo/favicon.png",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "features",
+              "cost"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              {
+                "group": "User Profile",
+                "pages": [
+                  "features/profile/profile",
+                  "features/profile/profile_desc",
+                  "features/profile/profile_config",
+                  "features/profile/profile_filter"
+                ]
+              },
+              {
+                "group": "User Event",
+                "pages": [
+                  "features/event/event",
+                  "features/event/event_tag",
+                  "features/event/event_search"
+                ]
+              },
+              "features/message",
+              "features/context"
+            ]
+          },
+          {
+            "group": "Practices",
+            "pages": [
+              "practices/tips",
+              "practices/openai"
+            ]
+          },
+          {
+            "group": "Referencces",
+            "pages": [
+              "references/full",
+              "references/async_client"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Examples",
+        "groups": [
+          {
+            "group": "Templates",
+            "icon": "lightbulb",
+            "pages": [
+              "templates/livekit",
+              "templates/ollama",
+              "templates/openai"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Reference",
+            "icon": "plug",
+            "pages": [
+              "api-reference/overview",
+              {
+                "group": "Project",
+                "pages": [
+                  "api-reference/project/get_profile_config",
+                  "api-reference/project/update_profile_config",
+                  "api-reference/utility/healthcheck",
+                  "api-reference/utility/usage"
+                ]
+              },
+              {
+                "group": "Manage Users",
+                "pages": [
+                  "api-reference/users/create_user",
+                  "api-reference/users/get_user",
+                  "api-reference/users/update_user",
+                  "api-reference/users/delete_user"
+                ]
+              },
+              {
+                "group": "User Data",
+                "pages": [
+                  "api-reference/blobs/insert_data",
+                  {
+                    "group": "Supported Blobs",
+                    "pages": [
+                      "api-reference/blobs/modal/chat"
+                    ]
+                  },
+                  "api-reference/blobs/get_all_data",
+                  "api-reference/blobs/get_blob",
+                  "api-reference/blobs/delete_blob"
+                ]
+              },
+              {
+                "group": "User Profiles",
+                "pages": [
+                  "api-reference/profiles/flush",
+                  "api-reference/profiles/profile",
+                  "api-reference/profiles/add_profile",
+                  "api-reference/profiles/update_profile",
+                  "api-reference/profiles/delete_profile"
+                ]
+              },
+              {
+                "group": "User Events",
+                "pages": [
+                  "api-reference/events/get_events",
+                  "api-reference/events/search_events",
+                  "api-reference/events/update_event",
+                  "api-reference/events/delete_event"
+                ]
+              },
+              {
+                "group": "Prompt",
+                "pages": [
+                  "api-reference/prompt/get_context"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Playground",
+          "href": "https://app.powermemo.io/playground",
+          "icon": "play"
+        },
+        {
+          "anchor": "Open Source",
+          "href": "https://github.com/memodb-io/powermemo",
+          "icon": "github"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/YdgwU4d9NB",
+          "icon": "discord"
+        },
+        {
+          "anchor": "Support",
+          "href": "mailto:contact@powermemo.io",
+          "icon": "envelope"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://powermemo.io"
+  },
+  "background": {
+    "color": {
+      "light": "#fff",
+      "dark": "#0f1117"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://github.com/memodb-io/powermemo?tab=readme-ov-file#support"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://powermemo.io/dashboard"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/powermemo_io",
+      "github": "https://github.com/memodb-io",
+      "discord": "https://discord.gg/YdgwU4d9NB"
+    }
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-SLW10C7BL1"
+    },
+    "gtm": {
+      "tagId": "GTM-PDC577XR"
+    }
+  }
+}
