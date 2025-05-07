@@ -76,9 +76,6 @@ Powermemo is building with FastAPI, Postgres and Redis, supporting request cachi
 
 
 <div align="center">
-    <picture>
-      <img alt="Shows the Powermemo Workflow" src="./assets/images/starter.png" width="80%">
-    </picture>
   <p>How Powermemo works?</p>
 </div>
 
