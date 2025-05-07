@@ -1,8 +1,4 @@
 <div align="center">
-    <picture>
-      <img alt="Shows the Powermemo logo" src="./assets/images/logo.png" width="80%">
-    </picture>
-  </a>
   <h1>Powermemo</h1>
   <p>
     <a href="https://pypi.org/project/powermemo/">
