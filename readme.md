@@ -55,15 +55,15 @@ check out performance on [public benchmark](./docs/experiments/locomo-benchmark)
 
 📅 **Time-aware Memory**
 
-Powermemo has more than user profiles, it also records [user event](https://docs.powermemo.io/features/event/event). User event is essiential to answer time-related question, see how we can [improve temporal memory much better](./docs/experiments/locomo-benchmark/README.md#Result) than other memory solutions.
+Powermemo has more than user profiles, it also records [user event](https://docs.21t.cc/features/event/event). User event is essiential to answer time-related question, see how we can [improve temporal memory much better](./docs/experiments/locomo-benchmark/README.md#Result) than other memory solutions.
 
 **🖼️ Contorllable Memory**
 
-Among all types of memory, only some may enhance your product experience. Powermemo offers a flexible configuration for you to [design the profile](https://docs.powermemo.io/features/profile/profile).
+Among all types of memory, only some may enhance your product experience. Powermemo offers a flexible configuration for you to [design the profile](https://docs.21t.cc/features/profile/profile).
 
 **🔌 Easy Integration**
 
-Minimal code changes to integrate with your existing LLM stack with [API](https://docs.powermemo.io/api-reference/overview), [Python](https://pypi.org/project/powermemo/)/[Node](./src/client/powermemo-ts/README.md)/[Go](./src/client/powermemo-go/README.md) SDK.
+Minimal code changes to integrate with your existing LLM stack with [API](https://docs.21t.cc/api-reference/overview), [Python](https://pypi.org/project/powermemo/)/[Node](./src/client/powermemo-ts/README.md)/[Go](./src/client/powermemo-go/README.md) SDK.
 
 **⚡️ Batch-Process**:
 
@@ -87,14 +87,14 @@ Powermemo is building with FastAPI, Postgres and Redis, supporting request cachi
 
 ## Get Started
 
-> Try our [playground](https://app.powermemo.io/playground) to see the memories in action
+> Try our [playground](https://app.21t.cc/playground) to see the memories in action
 
-1. [Start your Powermemo server locally](./src/server/readme.md). If you don't want to be bothered, Powermemo Cloud provides [a free tier](https://www.powermemo.io/en/login) enough for your testing
+1. [Start your Powermemo server locally](./src/server/readme.md). If you don't want to be bothered, Powermemo Cloud provides [a free tier](https://www.21t.cc/en/login) enough for your testing
 2. You should have the below two things to continue:
    1. A project url. (local: `http://localhost:8019` , cloud `https://api.powermemo.dev`)
    2. A project token. (local: `secret` , cloud `sk-proj-xxxxxx`)
 3. Install the Python SDK: `pip install powermemo`
-4. Below tutorial is for Python User. For other language and API, check [this](https://docs.powermemo.io/quickstart).
+4. Below tutorial is for Python User. For other language and API, check [this](https://docs.21t.cc/quickstart).
 
 
 
@@ -104,7 +104,7 @@ Powermemo is building with FastAPI, Postgres and Redis, supporting request cachi
 >
 > You can just run this equivalent [quickstart script](./assets/quickstart.py)
 >
-> Or you can keep things super easy by using [OpenAI SDK with Powermemo.](https://docs.powermemo.io/practices/openai), [Ollama with Powermemo](./assets/tutorials/ollama+powermemo)
+> Or you can keep things super easy by using [OpenAI SDK with Powermemo.](https://docs.21t.cc/practices/openai), [Ollama with Powermemo](./assets/tutorials/ollama+powermemo)
 
 ### 1. Make sure you're connected
 
@@ -150,7 +150,7 @@ print(u.get(bid)) # not found once you flush the memory.
 # u.delete(bid)
 ```
 
-> Be default, Powermemo will remove the blobs once they're processed. This means that apart from the relevant memory, your data will not be stored with Powermemo. You can persist the blobs by adjusting the [configuration file](https://docs.powermemo.io/features/customization/full#storage-config).
+> Be default, Powermemo will remove the blobs once they're processed. This means that apart from the relevant memory, your data will not be stored with Powermemo. You can persist the blobs by adjusting the [configuration file](https://docs.21t.cc/features/customization/full#storage-config).
 
 ### 4. Get your Memory
 
@@ -210,14 +210,14 @@ Something like:
 Please provide your answer using the information within the <memory> tag at the appropriate time.
 ```
 
-Checkout the detail params [here](https://docs.powermemo.io/api-reference/prompt/get_context).
+Checkout the detail params [here](https://docs.21t.cc/api-reference/prompt/get_context).
 
 ### What's next?
 
 - Checkout the [quickstart script](./assets/quickstart.py) for more details
-- You may want to explore the [customization](https://docs.powermemo.io/features/profile/profile) of Powermemo to make sure the system works as your expectation.
+- You may want to explore the [customization](https://docs.21t.cc/features/profile/profile) of Powermemo to make sure the system works as your expectation.
 - If you want to test Powermemo on your own data, we offer a [script](./docs/experiments/chat_sessions) that allows you to set multiple chat sessions and see how the memory grows.
-- See our [integrations](https://docs.powermemo.io/templates/livekit) to find anything may help you.
+- See our [integrations](https://docs.21t.cc/templates/livekit) to find anything may help you.
 
 
 
@@ -298,30 +298,7 @@ def pick_an_ad(profiles):
 
 ## Documentation
 
-For detailed usage instructions, visit the [documentation](https://docs.powermemo.io/). 
-
-
-
-## Stay Updated
-
-Star Powermemo on Github to support and receive instant notifications!
-
-![click_star](./assets/images/click.gif)
-
-
-
-## Support
-
-Join the community for support and discussions:
-
--  [Join our Discord](https://discord.gg/YdgwU4d9NB) 👻 
-
-- [Follow us on Twitter](https://x.com/powermemo_io) 𝕏 
-
-Or Just [email us](mailto:contact@powermemo.io) ❤️
-
-
-
+For detailed usage instructions, visit the [documentation](https://docs.21t.cc/). 
 
 
 ## Contribute
